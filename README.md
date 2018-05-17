@@ -4,4 +4,4 @@ Repository containing scripts (MATLAB) used for processing data reported in Spra
 
 I'm still working through scripts to organize & document procedures, so this repository will be updated throughout late May 2018.
 
-If you need access to materials before then, or have any questions, please feel free to contact me
+If you need access to materials before then, or have any questions, please feel free to contact me 
