@@ -27,9 +27,9 @@ yy = sin(linspace(0,2*pi,501))*marker_size;
 for ii = 1:length(data)
     
     this_c = cmap(1+floor((data(ii)-chan_range(1))/(chan_range(2)-chan_range(1))*n_colors),:);
-    %plot(xx+xGrid(ii),yy+yGrid(ii),'-','color',this_c);
+    
     patch(xx+xGrid(ii),yy+yGrid(ii),this_c);
-    % patch?
+    
     
     clear this_c;
     

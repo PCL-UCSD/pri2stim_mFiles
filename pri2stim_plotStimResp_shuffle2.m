@@ -24,7 +24,7 @@ end
 
 if nargin < 2 
 
-    VOIs = {'V1','V2','V3','V3A','V4','IPS0','IPS1','IPS2','IPS3','sPCS'}; % FEFnew
+    VOIs = {'V1','V2','V3','V3A','V4','IPS0','IPS1','IPS2','IPS3','sPCS'};
 
 end
 
@@ -431,40 +431,6 @@ match_ylim(get(gcf,'Children'));
 set(gcf,'Name','CRF F-scores');
 
 
-
-
-
-%% plot ROI vs. ROI stim activation-o-grams
-%
-% is stimulus activation for attended/unattended stimulus in one ROI
-% related to that in another ROI? to mean activation? to something else?
-%
-% take all activation across trials within a subj/ROI, correlate to same
-% trials in another ROI, same subj - then z-score, average, and un-z-score
-% for plotting
-% (shoudl move this to a separate function soon...)
-
-% for attended representation activation vs. attended representation
-% activation, so it's symmetric
-all_corr_attn = nan(length(VOIs),length(VOIs),length(u_subj));
-
-for ss = 1:length(u_subj)
-    
-    % we want a trials x VOIs matrix of activation values
-    
-    this_activation = nan(sum(all_subj==ss & all_vois==1),length(VOIs));
-    
-    for vv = 1:length(VOIs)
-        this_activation(:,vv) = all_targ_resp(all_subj==ss & all_vois==vv,1);
-    end
-    
-    
-    all_corr_attn(:,:,ss) = atanh(corr(this_activation));
-end
-
-figure;
-imagesc(mean(all_corr_attn,3));axis square;colorbar;
-set(gca,'XTick',1:length(VOIs),'XTickLabel',VOIs,'XTickLabelRotation',-45,'YTick',1:length(VOIs),'YTickLabel',VOIs);
 
 %% 3-way ANOVA
 X_forstats3 = reshape(X_forstats,numel(X_forstats),1);

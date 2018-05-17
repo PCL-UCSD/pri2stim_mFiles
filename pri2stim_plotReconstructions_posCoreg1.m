@@ -25,10 +25,6 @@ clim_mode = 2; % % 2 = within-ROI, 1 = across-ROIs
 
 myTR = 2.00;  % repetition time, in sec
 
-%mycolors = [0 127 66; 56 9 124; 28 69 68]./255;
-%load('/usr/local/serenceslab/tommy/wmDrop/wmDrop_colors.mat');
-
-
 
 u_subj = unique(cellfun(@(s) s(1:end-1),subj,'uniformoutput',0));
 
